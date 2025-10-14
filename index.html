@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.Loh Variedades - Tênis Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .cart-slide {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        .cart-slide.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="h-full gradient-bg text-white font-sans">
+    <!-- Header -->
+    <header class="bg-black/50 backdrop-blur-sm sticky top-0 z-40">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">DL</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold">D.Loh Variedades</h1>
+                        <p class="text-sm text-gray-300">Tênis Premium</p>
+                    </div>
+                </div>
+                
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#home" class="hover:text-purple-400 transition-colors">Início</a>
+                    <a href="#produtos" class="hover:text-purple-400 transition-colors">Produtos</a>
+                    <a href="#sobre" class="hover:text-purple-400 transition-colors">Sobre</a>
+                    <a href="#contato" class="hover:text-purple-400 transition-colors">Contato</a>
+                </nav>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="https://www.instagram.com/d.lohvariedades/" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:text-pink-300 transition-colors">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <button onclick="toggleCart()" class="relative bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg transition-colors">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-pink-900/20"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <h2 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Bem-vindo à D.Loh Variedades 
+                </h2>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                    Descubra nossa coleção exclusiva de tênis com qualidade superior e estilo único
+                </p>
+                <button onclick="document.getElementById('produtos').scrollIntoView({behavior: 'smooth'})" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105">
+                    Ver Produtos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos Section -->
+    <section id="produtos" class="py-16">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-12">Nossos Produtos</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
+                <!-- Produtos serão carregados aqui -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-16 bg-black/30">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-4xl font-bold mb-8">Sobre a D.Loh Variedades</h3>
+                <p class="text-lg text-gray-300 mb-6">
+                    Na D.Loh Variedades, oferecemos uma seleção cuidadosa de tênis premium com foco na qualidade, 
+                    conforto e estilo. Nossa missão é proporcionar a melhor experiência de compra para nossos clientes.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shipping-fast text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2">Entrega Rápida</h4>
+                        <p class="text-gray-400">Entregamos em todo o Brasil com agilidade e segurança</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-medal text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2">Qualidade Premium</h4>
+                        <p class="text-gray-400">Produtos selecionados com os mais altos padrões de qualidade</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-headset text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2">Suporte 24/7</h4>
+                        <p class="text-gray-400">Atendimento especializado sempre que você precisar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center">
+                <h3 class="text-4xl font-bold mb-8">Entre em Contato</h3>
+                <p class="text-lg text-gray-300 mb-8">
+                    Tem alguma dúvida? Entre em contato conosco através do Instagram ou WhatsApp
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://www.instagram.com/d.lohvariedades/" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 px-6 py-3 rounded-lg transition-all transform hover:scale-105 flex items-center justify-center">
+                        <i class="fab fa-instagram mr-2"></i>
+                        Seguir no Instagram
+                    </a>
+                    <a href="https://wa.me/55189966443734" target="_blank" rel="noopener noreferrer" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg transition-all transform hover:scale-105 flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-4 mb-4">
+                <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">DL</span>
+                </div>
+                <span class="text-xl font-bold">D.Loh Variedades</span>
+            </div>
+            <p class="text-gray-400 mb-4">© 2024 D.Loh Variedades. Todos os direitos reservados.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="https://www.instagram.com/d.lohvariedades/" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:text-pink-300 transition-colors">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-96 bg-gray-900 z-50 cart-slide shadow-2xl">
+        <div class="p-6 border-b border-gray-700">
+            <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold">Carrinho</h3>
+                <button onclick="toggleCart()" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="cart-items" class="p-6 flex-1 overflow-y-auto" style="height: calc(100% - 200px);">
+            <p class="text-gray-400 text-center">Seu carrinho está vazio</p>
+        </div>
+        
+        <div class="p-6 border-t border-gray-700">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-lg font-semibold">Total:</span>
+                <span id="cart-total" class="text-xl font-bold text-green-400">R$ 0,00</span>
+            </div>
+            <button onclick="checkout()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 py-3 rounded-lg font-semibold transition-all">
+                Finalizar Compra
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-40 hidden" onclick="toggleCart()"></div>
+
+    <script>
+        // Produtos de exemplo (substitua pelas suas imagens)
+        const products = [
+            {
+                id: 1,
+                name: "Tênis Esportivo Premium",
+                price: 299,90,
+                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23374151'/%3E%3Ctext x='150' y='100' font-family='Arial' font-size='16' fill='white' text-anchor='middle' dy='0.3em'%3ETênis 1%3C/text%3E%3C/svg%3E",
+                description: "Tênis esportivo de alta qualidade com tecnologia avançada de amortecimento."
+            },
+            {
+                id: 2,
+                name: "Tênis Casual Urbano",
+                price: 249,90,
+                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23374151'/%3E%3Ctext x='150' y='100' font-family='Arial' font-size='16' fill='white' text-anchor='middle' dy='0.3em'%3ETênis 2%3C/text%3E%3C/svg%3E",
+                description: "Perfeito para o dia a dia, combina conforto e estilo moderno."
+            },
+            {
+                id: 3,
+                name: "Tênis Running Pro",
+                price: 399,90,
+                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23374151'/%3E%3Ctext x='150' y='100' font-family='Arial' font-size='16' fill='white' text-anchor='middle' dy='0.3em'%3ETênis 3%3C/text%3E%3C/svg%3E",
+                description: "Desenvolvido para corrida com máximo desempenho e durabilidade."
+            },
+            {
+                id: 4,
+                name: "Tênis Fashion Style",
+                price: 199,90,
+                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23374151'/%3E%3Ctext x='150' y='100' font-family='Arial' font-size='16' fill='white' text-anchor='middle' dy='0.3em'%3ETênis 4%3C/text%3E%3C/svg%3E",
+                description: "Design exclusivo para quem busca diferenciação e personalidade."
+            },
+            {
+                id: 5,
+                name: "Tênis Comfort Plus",
+                price: 89,99,
+                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23374151'/%3E%3Ctext x='150' y='100' font-family='Arial' font-size='16' fill='white' text-anchor='middle' dy='0.3em'%3ETênis 5%3C/text%3E%3C/svg%3E",
+                description: "Máximo conforto para longas caminhadas e uso prolongado."
+            },
+            {
+                id: 6,
+                name: "Tênis Limited Edition",
+                price: 89,99,
+                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23374151'/%3E%3Ctext x='150' y='100' font-family='Arial' font-size='16' fill='white' text-anchor='middle' dy='0.3em'%3ETênis 6%3C/text%3E%3C/svg%3E",
+                description: "Edição limitada com design exclusivo e materiais premium."
+            }
+        ];
+
+        let cart = [];
+
+        // Renderizar produtos
+        function renderProducts() {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = products.map(product => `
+                <div class="product-card bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden">
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">${product.name}</h4>
+                        <p class="text-gray-400 mb-4">${product.description}</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-green-400">R$ ${product.price.toFixed(2).replace('.', ',')}</span>
+                            <button onclick="addToCart(${product.id})" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-4 py-2 rounded-lg transition-all transform hover:scale-105">
+                                <i class="fas fa-cart-plus mr-2"></i>Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Adicionar ao carrinho
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            
+            updateCartUI();
+        }
+
+        // Remover do carrinho
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartUI();
+        }
+
+        // Atualizar quantidade
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    updateCartUI();
+                }
+            }
+        }
+
+        // Atualizar UI do carrinho
+        function updateCartUI() {
+            const cartCount = document.getElementById('cart-count');
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            cartCount.textContent = totalItems;
+            cartTotal.textContent = `R$ ${totalPrice.toFixed(2).replace('.', ',')}`;
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="text-gray-400 text-center">Seu carrinho está vazio</p>';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="flex items-center justify-between bg-gray-800 rounded-lg p-4 mb-4">
+                        <div class="flex-1">
+                            <h5 class="font-semibold">${item.name}</h5>
+                            <p class="text-green-400">R$ ${item.price.toFixed(2).replace('.', ',')}</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button onclick="updateQuantity(${item.id}, -1)" class="bg-gray-700 hover:bg-gray-600 w-8 h-8 rounded-full flex items-center justify-center">
+                                <i class="fas fa-minus text-sm"></i>
+                            </button>
+                            <span class="w-8 text-center">${item.quantity}</span>
+                            <button onclick="updateQuantity(${item.id}, 1)" class="bg-gray-700 hover:bg-gray-600 w-8 h-8 rounded-full flex items-center justify-center">
+                                <i class="fas fa-plus text-sm"></i>
+                            </button>
+                            <button onclick="removeFromCart(${item.id})" class="bg-red-600 hover:bg-red-700 w-8 h-8 rounded-full flex items-center justify-center ml-2">
+                                <i class="fas fa-trash text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Toggle carrinho
+        function toggleCart() {
+            const sidebar = document.getElementById('cart-sidebar');
+            const overlay = document.getElementById('cart-overlay');
+            
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('hidden');
+        }
+
+        // Finalizar compra
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Seu carrinho está vazio!');
+                return;
+            }
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const message = `Olá! Gostaria de finalizar minha compra:\n\n${cart.map(item => `${item.name} - Qtd: ${item.quantity} - R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}`).join('\n')}\n\nTotal: R$ ${total.toFixed(2).replace('.', ',')}`;
+            
+            const whatsappUrl = `https://wa.me/5518996443734?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts();
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e968d36588ddeb',t:'MTc2MDQ2OTM2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
