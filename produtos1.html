@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Produtos - Página 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(55, 169, 24, 0.3);
+        }
+    </style>
+</head>
+<body class="text-white font-sans">
+    <!-- Produtos Section -->
+    <section id="produtos" class="py-16">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-12">Nossos Produtos</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
+                <!-- Produtos serão carregados aqui -->
+            </div>
+
+            <!-- Links de navegação das páginas de produtos -->
+            <div class="flex justify-center gap-4 mt-10">
+                <a href="produtos1.html" class="bg-purple-600 px-4 py-2 rounded text-white hover:bg-purple-700">Página 1</a>
+                <a href="produtos2.html" class="bg-purple-600 px-4 py-2 rounded text-white hover:bg-purple-700">Página 2</a>
+                <a href="produtos3.html" class="bg-purple-600 px-4 py-2 rounded text-white hover:bg-purple-700">Página 3</a>
+            </div>
+
+            <!-- Botão para voltar à página inicial -->
+            <div class="flex justify-center mt-6">
+                <a href="index.html" class="bg-pink-600 px-6 py-3 rounded text-white font-bold hover:bg-pink-700 transition-all">
+                    Voltar para a Página Inicial
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    const products = [
+        {
+            id: 1,
+            name: "Tênis Esportivo Premium",
+            price: 299.90,
+            image: "img/i6.png",
+            description: "Tênis esportivo de alta qualidade com tecnologia avançada de amortecimento."
+        },
+        {
+            id: 2,
+            name: "Tênis Casual Urbano",
+            price: 249.90,
+            image: "img/i4.png",
+            description: "Perfeito para o dia a dia, combina conforto e estilo moderno."
+        },
+        {
+            id: 3,
+            name: "Tênis Running Pro",
+            price: 399.90,
+            image: "img/i3.png",
+            description: "Desenvolvido para corrida com máximo desempenho e durabilidade."
+        },
+        {
+            id: 4,
+            name: "Tênis Fashion Style",
+            price: 199.90,
+            image: "img/i2.png",
+            description: "Design exclusivo para quem busca diferenciação e personalidade."
+        },
+        {
+            id: 5,
+            name: "Tênis Comfort Plus",
+            price: 89.99,
+            image: "img/i1.png",
+            description: "Máximo conforto para longas caminhadas e uso prolongado."
+        },
+        {
+            id: 6,
+            name: "Tênis Limited Edition",
+            price: 89.99,
+            image: "img/i5.png",
+            description: "Edição limitada com design exclusivo e materiais premium."
+        }
+    ];
+
+    function renderProducts() {
+        const grid = document.getElementById('products-grid');
+        grid.innerHTML = products.map(product => `
+            <div class="product-card bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden flex flex-col">
+                <a href="${product.image}" target="_blank">
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-contain hover:scale-105 transition-transform duration-200">
+                </a>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2">${product.name}</h4>
+                        <p class="text-gray-400 mb-4">${product.description}</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-2xl font-bold text-green-400">R$ ${product.price.toFixed(2).replace('.', ',')}</span>
+                        <button class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-4 py-2 rounded-lg transition-all transform hover:scale-105">
+                            <i class="fas fa-cart-plus mr-2"></i>Adicionar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        renderProducts();
+    });
+    </script>
+</body>
+</html>
