@@ -330,26 +330,84 @@
         let cart = [];
 
         // Renderizar produtos
-        function renderProducts() {
-            const grid = document.getElementById('products-grid');
-grid.innerHTML = products.map(product => `
-    <div class="product-card bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden">
-        <a href="${product.image}" target="_blank">
-            <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-contain hover:scale-105 transition-transform duration-200">
-        </a>
-        <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">${product.name}</h4>
-            <p class="text-gray-400 mb-4">${product.description}</p>
-            <div class="flex items-center justify-between">
-                <span class="text-2xl font-bold text-green-400">R$ ${product.price.toFixed(2).replace('.', ',')}</span>
-                <button onclick="addToCart(${product.id})" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-4 py-2 rounded-lg transition-all transform hover:scale-105">
-                    <i class="fas fa-cart-plus mr-2"></i>Adicionar
-                </button>
+<script>
+const products = [
+    {
+        id: 1,
+        name: "Tênis Esportivo Premium",
+        price: 299.90,
+        image: "img/i6.png",
+        description: "Tênis esportivo de alta qualidade com tecnologia avançada de amortecimento."
+    },
+    {
+        id: 2,
+        name: "Tênis Casual Urbano",
+        price: 249.90,
+        image: "img/i4.png",
+        description: "Perfeito para o dia a dia, combina conforto e estilo moderno."
+    },
+    {
+        id: 3,
+        name: "Tênis Running Pro",
+        price: 399.90,
+        image: "img/i3.png",
+        description: "Desenvolvido para corrida com máximo desempenho e durabilidade."
+    },
+    {
+        id: 4,
+        name: "Tênis Fashion Style",
+        price: 199.90,
+        image: "img/i2.png",
+        description: "Design exclusivo para quem busca diferenciação e personalidade."
+    }
+];
+
+function renderProducts() {
+    const grid = document.getElementById('products-grid');
+
+    // 🔹 Linha para o vídeo antes dos produtos
+    const videoHTML = `
+        <div class="product-card bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden flex flex-col col-span-1 md:col-span-2 lg:col-span-3">
+            <div class="relative w-full h-64 md:h-96">
+                <video controls autoplay muted loop class="w-full h-full object-cover rounded-xl">
+                    <source src="videos/meu-video.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos HTML5.
+                </video>
+            </div>
+            <div class="p-4 text-center">
+                <h4 class="text-xl font-semibold mb-2">Apresentação dos Nossos Produtos</h4>
+                <p class="text-gray-400">Assista ao vídeo e conheça mais sobre a nossa coleção.</p>
             </div>
         </div>
-    </div>
-`).join('');
-        }
+    `;
+
+    // 🔹 Renderiza o vídeo + produtos
+    grid.innerHTML = videoHTML + products.map(product => `
+        <div class="product-card bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden flex flex-col">
+            <a href="${product.image}" target="_blank">
+                <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-contain hover:scale-105 transition-transform duration-200">
+            </a>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                    <h4 class="text-xl font-semibold mb-2">${product.name}</h4>
+                    <p class="text-gray-400 mb-4">${product.description}</p>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                    <span class="text-2xl font-bold text-green-400">R$ ${product.price.toFixed(2).replace('.', ',')}</span>
+                    <button class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-4 py-2 rounded-lg transition-all transform hover:scale-105">
+                        <i class="fas fa-cart-plus mr-2"></i>Adicionar
+                    </button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    renderProducts();
+});
+</script>
+
 
         // Adicionar ao carrinho
         function addToCart(productId) {
@@ -452,6 +510,7 @@ grid.innerHTML = products.map(product => `
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e968d36588ddeb',t:'MTc2MDQ2OTM2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
 
 
 
