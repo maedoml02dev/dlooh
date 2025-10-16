@@ -89,27 +89,42 @@
 </section>
 
     <!-- Produtos Section -->
-    <section id="produtos" class="py-16">
-        <div class="container mx-auto px-4">
-            <h3 class="text-4xl font-bold text-center mb-12">Nossos Produtos</h3>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
-                <!-- Produtos serão carregados aqui -->
-            </div>
+<!-- Produtos Section -->
+<section id="produtos" class="py-16">
+    <div class="container mx-auto px-4">
 
-            <!-- Links de navegação das páginas de produtos -->
-            <div class="flex justify-center gap-4 mt-10">
-                <a href="produtos1.html" class="bg-purple-600 px-4 py-2 rounded text-white hover:bg-purple-700">Página 1</a>
-            </div>
-
-            <!-- Botão para voltar à página inicial -->
-            <div class="flex justify-center mt-6">
-                <a href="index.html" class="bg-pink-600 px-6 py-3 rounded text-white font-bold hover:bg-pink-700 transition-all">
-                    Voltar para a Página Inicial
-                </a>
-            </div>
+        <!-- 🔽 Botão "Ver Produtos" movido para cima do título -->
+        <div class="flex justify-center mb-10">
+            <button 
+                onclick="document.getElementById('produtos').scrollIntoView({behavior: 'smooth'})"
+                class="bg-gradient-to-r from-purple-600 to-pink-600 
+                       hover:from-purple-700 hover:to-pink-700 
+                       px-10 py-4 rounded-full text-lg font-semibold 
+                       transition-all transform hover:scale-105 w-full max-w-sm text-center">
+                Ver Produtos
+            </button>
         </div>
-    </section>
+
+        <h3 class="text-4xl font-bold text-center mb-12">Nossos Produtos</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
+            <!-- Produtos serão carregados aqui -->
+        </div>
+
+        <!-- Links de navegação -->
+        <div class="flex justify-center gap-4 mt-10">
+            <a href="produtos1.html" class="bg-purple-600 px-4 py-2 rounded text-white hover:bg-purple-700">Página 1</a>
+        </div>
+
+        <!-- Voltar para a página inicial -->
+        <div class="flex justify-center mt-6">
+            <a href="index.html" class="bg-pink-600 px-6 py-3 rounded text-white font-bold hover:bg-pink-700 transition-all">
+                Voltar para a Página Inicial
+            </a>
+        </div>
+    </div>
+</section>
+
 
     <!-- Sobre Section -->
     <section id="sobre" class="py-16 bg-black/30">
@@ -475,6 +490,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e968d36588ddeb',t:'MTc2MDQ2OTM2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
 
 
 
