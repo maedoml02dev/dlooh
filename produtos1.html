@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D.Loh Variedades - Tênis Premium</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body { background: #1a1a1a; }
+    .gradient-bg { background: #1a1a1a; }
+    .product-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(55, 169, 24, 0.3); }
+    .cart-slide { transform: translateX(100%); transition: transform 0.3s ease; }
+    .cart-slide.open { transform: translateX(0); }
+    .floating-cart {
+      position: fixed; bottom: 25px; right: 25px;
+      background: linear-gradient(to right, #9333ea, #ec4899);
+      color: white; border-radius: 50%; width: 65px; height: 65px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
+      cursor: pointer; z-index: 50;
+    }
+    .floating-cart:hover { transform: scale(1.05); transition: 0.3s; }
+  </style>
+</head>
+
+<body class="h-full gradient-bg text-white font-sans">
+
+  <!-- Header -->
+  <header class="bg-black/50 backdrop-blur-sm sticky top-0 z-40">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">D.Loh Variedades</h1>
+
+      <nav class="hidden md:flex space-x-6">
+        <a href="#home" class="hover:text-pink-400">Início</a>
+        <a href="#produtos" class="hover:text-pink-400">Produtos</a>
+        <a href="#sobre" class="hover:text-pink-400">Sobre</a>
+        <a href="#contato" class="hover:text-pink-400">Contato</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <a href="https://www.instagram.com/d.lohvariedades/" target="_blank" class="text-pink-400 hover:text-pink-300">
+          <i class="fab fa-instagram text-xl"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" style="
+    background: url('img/.png') left center/contain no-repeat,
+                url('img/fundo2.png') right center/contain no-repeat;
+    min-height: 400px;
+  ">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-5xl font-bold text-pink-400 mb-4">Bem-vindo à D.Loh Variedades</h2>
+      <p class="text-lg text-gray-300">Tênis premium com qualidade e estilo</p>
+    </div>
+  </section>
+
+  <!-- Produtos -->
+  <section id="produtos" class="py-16">
+    <div class="container mx-auto px-4 text-center">
+      <button onclick="document.getElementById('products-grid').scrollIntoView({behavior: 'smooth'})"
+        class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 mb-8">
+        Ver Produtos
+      </button>
+
+      <h3 class="text-4xl font-bold mb-12">Nossos Produtos</h3>
+      <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+
+      <div class="flex justify-center gap-4 mt-10">
+        <a href="index.html" class="bg-purple-600 px-4 py-2 rounded hover:bg-purple-700">Página 1</a>
+      </div>
+
+      <div class="flex justify-center mt-6">
+        <a href="index.html" class="bg-pink-600 px-6 py-3 rounded text-white font-bold hover:bg-pink-700 transition-all">
+          Voltar para a Página Inicial
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrinho -->
+  <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-96 bg-gray-900 z-50 cart-slide shadow-2xl">
+    <div class="p-6 border-b border-gray-700 flex items-center justify-between">
+      <h3 class="text-xl font-bold">Carrinho</h3>
+      <button onclick="toggleCart()" class="text-gray-400 hover:text-white">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+    </div>
+    <div id="cart-items" class="p-6 flex-1 overflow-y-auto" style="height: calc(100% - 200px);">
+      <p class="text-gray-400 text-center">Seu carrinho está vazio</p>
+    </div>
+    <div class="p-6 border-t border-gray-700">
+      <div class="flex justify-between mb-4">
+        <span class="text-lg font-semibold">Total:</span>
+        <span id="cart-total" class="text-xl font-bold text-green-400">R$ 0,00</span>
+      </div>
+      <button onclick="openPaymentModal()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 py-3 rounded-lg font-semibold">
+        Finalizar Compra
+      </button>
+    </div>
+  </div>
+  <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-40 hidden" onclick="toggleCart()"></div>
+
+  <!-- Modal de Pagamento -->
+  <div id="payment-modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+    <div class="bg-gray-900 rounded-2xl shadow-2xl p-8 max-w-md w-full text-center">
+      <h3 class="text-2xl font-bold mb-4">Escolha a forma de pagamento</h3>
+      <p class="text-gray-400 mb-6">Selecione uma das opções abaixo:</p>
+
+      <div class="space-y-4">
+        <button onclick="payWithPix()" class="w-full bg-green-600 hover:bg-green-700 py-3 rounded-lg font-semibold flex items-center justify-center">
+          <i class="fas fa-qrcode mr-2"></i> Pagar com Pix
+        </button>
+
+        <button onclick="payWithCard()" class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg font-semibold flex items-center justify-center">
+          <i class="fas fa-credit-card mr-2"></i> Cartão de Crédito
+        </button>
+
+        <button onclick="checkoutWhatsApp()" class="w-full bg-purple-600 hover:bg-purple-700 py-3 rounded-lg font-semibold flex items-center justify-center">
+          <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+        </button>
+
+        <button onclick="closePaymentModal()" class="w-full bg-red-600 hover:bg-red-700 py-3 rounded-lg font-semibold mt-6">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão Flutuante -->
+  <div class="floating-cart" onclick="toggleCart()">
+    <i class="fas fa-shopping-cart text-2xl"></i>
+    <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+  </div>
+
+  <!-- Script externo -->
+  <script src="script.js"></script>
+</body>
+</html>
