@@ -156,7 +156,7 @@ function closePaymentModal() {
 // ---------- Payment options ----------
 function payWithPix() {
   const total = cart.reduce((s, it) => s + (it.price * it.quantity), 0);
-  alert(`💸 Pagar via Pix\nChave: loja@pagamento.com.br\nTotal: R$ ${total.toFixed(2).replace('.', ',')}\n\nApós o pagamento, envie o comprovante via WhatsApp.`);
+  alert(`💸 Pagar via Pix\nChave: 18 99644-3734\nTotal: R$ ${total.toFixed(2).replace('.', ',')}\n\nApós o pagamento, envie o comprovante via WhatsApp.`);
   closePaymentModal();
 }
 
@@ -221,3 +221,4 @@ window.payWithCard = payWithCard;
 window.payOnDelivery = payOnDelivery;
 window.checkoutWhatsApp = checkoutWhatsApp;
 window.scrollToTop = scrollToTop;
+
