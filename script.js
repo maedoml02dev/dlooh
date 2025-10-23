@@ -18,7 +18,23 @@ const products = [
   { id: 12, name: "Tênis ADIDAS", price: 80, image: "img/12.png", description: "N°." },
   { id: 13, name: "Tênis ADIDAS", price: 80, image: "img/13.png", description: "N°." },
   { id: 14, name: "Tênis NIKE", price: 80, image: "img/14.png", description: "N°." },
-  { id: 15, name: "Tênis Vans", price: 80, image: "img/15.png", description: "N°." }
+  { id: 15, name: "Tênis Vans", price: 80, image: "img/15.png", description: "N°." },
+
+  { id: 16, name: "Nike Air Max Plus Tuned Air", price: 80, image: "img/16.png", description: "N°." },
+  { id: 17, name: "Tênis NIKE Air Jordan 1 Low", price: 80, image: "img/17.png", description: "N°." },
+  { id: 18, name: "Tênis Asics Casual/Running Masculino", price: 80, image: "img/18.png", description: "N°." },
+  { id: 19, name: "Nike Dunk Low", price: 80, image: "img/19.png", description: "N°." },
+  { id: 20, name: "Tênis NIKE", price: 80, image: "img/20.png", description: "Nº27 ao Nº33." },
+  { id: 21, name: "Tênis NIKE", price: 80, image: "img/21.png", description: "N°." },
+  { id: 22, name: "Tênis Vans", price: 80, image: "img/22.png", description: "N°." },
+  { id: 23, name: "Tênis NIKE Air", price: 80, image: "img/23.png", description: "Nº26 ao Nº33." },
+  { id: 24, name: "Chinelo Esportivo Estilo Street Comfort", price: 80, image: "img/24.png", description: "N°." },
+  { id: 25, name: "Tênis NIKE", price: 80, image: "img/25.png", description: "N°." },
+  { id: 26, name: "Tênis NIKE", price: 80, image: "img/26.png", description: "N°." },
+  { id: 27, name: "Tênis ADIDAS", price: 80, image: "img/27.png", description: "N°." },
+  { id: 28, name: "Tênis ADIDAS", price: 80, image: "img/28.png", description: "N°." },
+  { id: 29, name: "Tênis NIKE", price: 80, image: "img/29.png", description: "N°." },
+  { id: 30, name: "Tênis Vans", price: 80, image: "img/30.png", description: "N°." },
 ];
 
 let cart = [];
@@ -221,4 +237,5 @@ window.payWithCard = payWithCard;
 window.payOnDelivery = payOnDelivery;
 window.checkoutWhatsApp = checkoutWhatsApp;
 window.scrollToTop = scrollToTop;
+
 
