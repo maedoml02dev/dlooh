@@ -6,7 +6,7 @@ const CART_KEY = 'cart';
 const products = [
   { id: 1, name: "Nike Air Max Plus Tuned Air", price: 150, image: "img/1.png", description: "N°." },
   { id: 2, name: "Tênis NIKE Air Jordan 1 Low", price: 150, image: "img/2.png", description: "N°." },
-  { id: 3, name: "Tênis Asics Casual/Running Masculino", price: 190,00, image: "img/3.png", description: "N°." },
+  { id: 3, name: "Tênis Asics Casual/Running Masculino", price: 190, image: "img/3.png", description: "N°." },
   { id: 4, name: "Nike Dunk Low", price: 80, image: "img/4.png", description: "N°." },
   { id: 5, name: "Tênis NIKE", price: 80, image: "img/5.png", description: "Nº27 ao Nº33." },
   { id: 6, name: "Tênis NIKE", price: 99.90, image: "img/6.png", description: "N°." },
@@ -237,6 +237,7 @@ window.payWithCard = payWithCard;
 window.payOnDelivery = payOnDelivery;
 window.checkoutWhatsApp = checkoutWhatsApp;
 window.scrollToTop = scrollToTop;
+
 
 
 
