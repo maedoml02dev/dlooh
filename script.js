@@ -18,7 +18,7 @@ const products = [
   { id: 12, name: "Tênis ADIDAS", price: 80, image: "img/12.png", description: "N°." },
   { id: 13, name: "Tênis ADIDAS", price: 190, image: "img/13.png", description: "N°." },
   { id: 14, name: "Tênis NIKE", price: 190, image: "img/14.png", description: "N°." },
-  { id: 15, name: "Tênis Vans", price: 80, image: "img/15.png", description: "N°." },
+  { id: 15, name: "Tênis Vans", price: 110, image: "img/15.png", description: "N°." },
 
   { id: 16, name: "Nike Air Max Plus Tuned Air", price: 130, image: "img/16.png", description: "N°." },
   { id: 17, name: "Tênis NIKE Air Jordan 1 Low", price: 200, image: "img/17.png", description: "N°." },
@@ -29,7 +29,7 @@ const products = [
   { id: 22, name: "Tênis Vans", price: 80, image: "img/22.png", description: "N°." },
   { id: 23, name: "Tênis NIKE Air", price: 80, image: "img/23.png", description: "Nº26 ao Nº33." },
   { id: 24, name: "Tênis NIKE", price: 99, image: "img/24.png", description: "N°." },
-  { id: 25, name: "Tênis NIKE", price: 80, image: "img/25.png", description: "N°." },
+    { id: 25, name: "Tênis NIKE", price: 80, image: "img/25.png", description: "Nº26 a Nº33." },
   { id: 26, name: "Tênis NIKE", price: 99, image: "img/26.png", description: "N°." },
   { id: 27, name: "Tênis  ALL Star  ", price: 190, image: "img/27.png", description: "N°." },
   { id: 28, name: "Tênis  ASICS", price: 190, image: "img/28.png", description: "N°." },
@@ -237,6 +237,7 @@ window.payWithCard = payWithCard;
 window.payOnDelivery = payOnDelivery;
 window.checkoutWhatsApp = checkoutWhatsApp;
 window.scrollToTop = scrollToTop;
+
 
 
 
