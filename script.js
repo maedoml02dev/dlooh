@@ -7,17 +7,17 @@ const products = [
   { id: 1, name: "Nike Air Max Plus Tuned Air", price: 150, image: "img/1.png", description: "N°." },
   { id: 2, name: "Tênis NIKE Air Jordan 1 Low", price: 150, image: "img/2.png", description: "N°." },
   { id: 3, name: "Tênis Asics Casual/Running Masculino", price: 190, image: "img/3.png", description: "N°." },
-  { id: 4, name: "Nike Dunk Low", price: 80, image: "img/4.png", description: "N°." },
+  { id: 4, name: "Nike Dunk Low", price: 180, image: "img/4.png", description: "N°." },
   { id: 5, name: "Tênis NIKE", price: 80, image: "img/5.png", description: "Nº27 ao Nº33." },
   { id: 6, name: "Tênis NIKE", price: 99.90, image: "img/6.png", description: "N°." },
   { id: 7, name: "Tênis Vans", price: 80, image: "img/7.png", description: "N°." },
   { id: 8, name: "Tênis NIKE Air", price: 80, image: "img/8.png", description: "Nº26 ao Nº33." },
-  { id: 9, name: "Chinelo Esportivo Estilo Street Comfort", price: 159, image: "img/9.png", description: "N°." },
+  { id: 9, name: "Chinelo Esportivo Estilo Street Comfort", price: 159.90, image: "img/9.png", description: "N°." },
   { id: 10, name: "Tênis NIKE", price: 80, image: "img/10.png", description: "N°." },
   { id: 11, name: "Tênis NIKE", price: 130, image: "img/11.png", description: "N°." },
   { id: 12, name: "Tênis ADIDAS", price: 80, image: "img/12.png", description: "N°." },
   { id: 13, name: "Tênis ADIDAS", price: 190, image: "img/13.png", description: "N°." },
-  { id: 14, name: "Tênis NIKE", price: 80, image: "img/14.png", description: "N°." },
+  { id: 14, name: "Tênis NIKE", price: 190, image: "img/14.png", description: "N°." },
   { id: 15, name: "Tênis Vans", price: 80, image: "img/15.png", description: "N°." },
 
   { id: 16, name: "Nike Air Max Plus Tuned Air", price: 130, image: "img/16.png", description: "N°." },
@@ -31,9 +31,9 @@ const products = [
   { id: 24, name: "Tênis NIKE", price: 99, image: "img/24.png", description: "N°." },
   { id: 25, name: "Tênis NIKE", price: 80, image: "img/25.png", description: "N°." },
   { id: 26, name: "Tênis NIKE", price: 99, image: "img/26.png", description: "N°." },
-  { id: 27, name: "Tênis Tenis ALL Star  ", price: 190, image: "img/27.png", description: "N°." },
+  { id: 27, name: "Tênis  ALL Star  ", price: 190, image: "img/27.png", description: "N°." },
   { id: 28, name: "Tênis  ASICS", price: 190, image: "img/28.png", description: "N°." },
-  { id: 29, name: "Tênis NIKE", price: 80, image: "img/29.png", description: "N°." },
+  { id: 29, name: "Tênis NIKE", price: 180, image: "img/29.png", description: "N°." },
   { id: 30, name: "Tênis Vans", price: 160, image: "img/30.png", description: "N°." },
 ];
 
@@ -237,6 +237,7 @@ window.payWithCard = payWithCard;
 window.payOnDelivery = payOnDelivery;
 window.checkoutWhatsApp = checkoutWhatsApp;
 window.scrollToTop = scrollToTop;
+
 
 
 
