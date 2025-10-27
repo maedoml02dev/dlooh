@@ -15,7 +15,7 @@ const products = [
   { id: 9, name: "Chinelo Esportivo Estilo Street Comfort", price: 159.90, image: "img/9.png", description: "N°." },
   { id: 10, name: "Tênis NIKE", price: 80, image: "img/10.png", description: "N°." },
   { id: 11, name: "Tênis NIKE", price: 130, image: "img/11.png", description: "N°." },
-  { id: 12, name: "Tênis ADIDAS", price: 180, image: "img/12.png", description: "Nº34  Nº39." },
+  { id: 12, name: "Tênis ADIDAS", price: 180, image: "img/12.png", description: "Nº34 ao Nº39." },
   { id: 13, name: "Tênis ADIDAS", price: 190, image: "img/13.png", description: "N°." },
   { id: 14, name: "Tênis NIKE", price: 190, image: "img/14.png", description: "N°." },
   { id: 15, name: "Tênis Vans", price: 110, image: "img/15.png", description: "N°." },
@@ -237,6 +237,7 @@ window.payWithCard = payWithCard;
 window.payOnDelivery = payOnDelivery;
 window.checkoutWhatsApp = checkoutWhatsApp;
 window.scrollToTop = scrollToTop;
+
 
 
 
