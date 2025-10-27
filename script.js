@@ -9,7 +9,7 @@ const products = [
   { id: 3, name: "Tênis Asics Casual/Running Masculino", price: 190, image: "img/3.png", description: "Nº38 ao Nº43." },
   { id: 4, name: "Nike Dunk Low", price: 180, image: "img/4.png", description: "Nº38 ao Nº43." },
   { id: 5, name: "Tênis NIKE", price: 80, image: "img/5.png", description: "Nº27 ao Nº33." },
-  { id: 6, name: "Tênis NIKE", price: 99.90, image: "img/6.png", description: "Nº38 Nº43." },
+  { id: 6, name: "Tênis NIKE", price: 99.90, image: "img/6.png", description: "Nº38 ao Nº43." },
   { id: 7, name: "Tênis Vans", price: 80, image: "img/7.png", description: "Nº38 ao Nº43." },
   { id: 8, name: "Tênis NIKE Air", price: 80, image: "img/8.png", description: "Nº26 ao Nº33." },
   { id: 9, name: "Chinelo Esportivo Estilo Street Comfort", price: 159.90, image: "img/9.png", description: "Nº38 ao Nº43." },
@@ -21,7 +21,7 @@ const products = [
   { id: 15, name: "Tênis Vans", price: 110, image: "img/15.png", description: "Nº38 ao nº43." },
 
   { id: 16, name: "Nike Air Max Plus Tuned Air", price: 130, image: "img/16.png", description: "Nº38 ao Nº43." },
-  { id: 17, name: "Tênis NIKE Air Jordan 1 Low", price: 200, image: "img/17.png", description: "Nº38 AO nº43." },
+  { id: 17, name: "Tênis NIKE Air Jordan 1 Low", price: 200, image: "img/17.png", description: "Nº38 ao nº43." },
   { id: 18, name: "Tênis Asics Casual/Running Masculino", price: 150, image: "img/18.png", description: "Nº38 ao Nº43." },
   { id: 19, name: "Nike Dunk Low", price: 80, image: "img/19.png", description: "Nº38 ao Nº43." },
   { id: 20, name: "Tênis NIKE", price: 80, image: "img/20.png", description: "Nº27 ao Nº33." },
@@ -237,6 +237,7 @@ window.payWithCard = payWithCard;
 window.payOnDelivery = payOnDelivery;
 window.checkoutWhatsApp = checkoutWhatsApp;
 window.scrollToTop = scrollToTop;
+
 
 
 
