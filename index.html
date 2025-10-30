@@ -1,51 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-BR" class="h-full">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>D.Loh Variedades - Tênis Premium</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <style>
-    body { background: #1a1a1a; }
-    .gradient-bg { background: #f9ebc7; }
-    .product-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .product-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(55, 169, 24, 0.3); }
-    .cart-slide { transform: translateX(100%); transition: transform 0.3s ease; }
-    .cart-slide.open { transform: translateX(0); }
-    .floating-cart {
-      position: fixed; bottom: 25px; right: 25px;
-      background: linear-gradient(to right, #9333ea, #ec4899);
-      color: white; border-radius: 50%; width: 65px; height: 65px;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
-      cursor: pointer; z-index: 50;
-    }
-    .floating-cart:hover { transform: scale(1.05); transition: 0.3s; }
-  </style>
-</head>
+<!-- Header -->
+<header class="bg-black/50 backdrop-blur-sm sticky top-0 z-40">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold"></h1>
 
-<body class="h-full gradient-bg text-white font-sans">
+    <nav class="hidden md:flex space-x-6">
+      <a href="#home" class="hover:text-pink-400">Início</a>
+      <a href="#produtos" class="hover:text-pink-400">Produtos</a>
+      <a href="#sobre" class="hover:text-pink-400">Sobre</a>
+      <a href="#contato" class="hover:text-pink-400">Contato</a>
+    </nav>
 
-  <!-- Header -->
-  <header class="bg-black/50 backdrop-blur-sm sticky top-0 z-40">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold"></h1>
-
-      <nav class="hidden md:flex space-x-6">
-        <a href="#home" class="hover:text-pink-400">Início</a>
-        <a href="#produtos" class="hover:text-pink-400">Produtos</a>
-        <a href="#sobre" class="hover:text-pink-400">Sobre</a>
-        <a href="#contato" class="hover:text-pink-400">Contato</a>
-      </nav>
-
-      <div class="flex items-center space-x-4">
-        <a href="https://www.instagram.com/d.lohvariedades/" target="_blank" class="text-pink-400 hover:text-pink-300">
-          <i class="fab fa-instagram text-xl"></i>
-        </a>
-      </div>
+    <div class="flex items-center space-x-4">
+      <a href="https://www.instagram.com/d.lohvariedades/" target="_blank" class="text-pink-400 hover:text-pink-300">
+        <i class="fab fa-instagram text-xl"></i>
+      </a>
     </div>
-  </header>
+  </div>
+</header>
+
+<!-- Seção SOBRE -->
+<section id="sobre" class="bg-gray-900 text-white py-20 px-6 text-center">
+  <h2 class="text-3xl font-bold mb-4 text-pink-400">Sobre Nossa Loja</h2>
+  <p class="max-w-2xl mx-auto text-lg">
+    A <strong>D.Loh Variedades</strong> é uma loja especializada em tênis de qualidade, estilo e conforto.
+    Trabalhamos com as melhores marcas e modelos, garantindo o melhor custo-benefício para nossos clientes.
+    Nosso compromisso é oferecer produtos originais e um atendimento de confiança!
+  </p>
+</section>
 
   <!-- Hero -->
   <section id="home" style="
@@ -142,4 +123,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
